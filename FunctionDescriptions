@@ -1,1 +1,28 @@
 Add here what a function does in one sentence, in your own words. Later you can order them based on similar functionalities.
+
+int     ft_isalpha(int c) - Checks whether a character is alphabethic.
+Locale-sensitive.
+
+int     ft_isdigit(int c) - Checks whether a character is a digit.
+
+int     ft_isalnum(int c) - Check whether a character is alphanumeric.
+
+int     ft_isascii(int c) - Checks whether a character is a 7-bit unsigned char value that
+fits into the ASCII character set.
+
+int     ft_isprint(int c) - Checks whether a character is printable or not,
+printable includes the space value.
+
+size_t  ft_strlen(const char *s) - Calculates the sizes of a function, excluding
+value \0.
+
+void    *ft_memset(void *s, int c, size_t n) - Writes a integer value for n
+amount of bytes into the memory destination pointed by s.
+
+void    ft_bzero(void *s, size_t n) - Writes zero value (\0) bytes for n amount
+of bytes into the memory destination pointed by s. Does the same as ft_memset(s,
+0, n).
+
+void    *ft_memcpy(void *dest, const void *src, size_t n) - Copies n amount of
+bytes from memory pointed by src to memory pointed by dest. Src and dest
+shouldn't have overlapping memory. Otherwise undefined behavior. 
