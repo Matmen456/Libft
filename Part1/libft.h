@@ -6,7 +6,7 @@
 /*   By: mfavoree <mfavoree@student.42belgium.be>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 10:44:52 by mfavoree          #+#    #+#             */
-/*   Updated: 2026/10/21 12:23:22 by mfavoree         ###   ########.fr       */
+/*   Updated: 2026/10/21 13:50:26 by mfavoree         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dsize);
+int 	ft_toupper(int c);
+int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		strncmp(const char s1[], const char s2[], size_t n);
