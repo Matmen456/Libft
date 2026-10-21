@@ -1,7 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mfavoree <mfavoree@student.42belgium.be>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/21 09:41:12 by mfavoree          #+#    #+#             */
+/*   Updated: 2026/10/21 09:41:14 by mfavoree         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// What if n is zero. It might have to return 0?
-// The man pages doesn't say anything specific about it.
+#include "libft.h"
 
 int	ft_strncmp(const char s1[], const char s2[], size_t n)
 {
