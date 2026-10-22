@@ -6,12 +6,12 @@
 /*   By: mfavoree <mfavoree@student.42belgium.be>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 09:40:13 by mfavoree          #+#    #+#             */
-/*   Updated: 2026/10/21 09:40:16 by mfavoree         ###   ########.fr       */
+/*   Updated: 2026/10/22 11:25:39 by mfavoree         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+// Finds the first occurance of a byte c inside a string.
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;

@@ -1,4 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mfavoree <mfavoree@student.42belgium.be>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/22 10:56:51 by mfavoree          #+#    #+#             */
+/*   Updated: 2026/10/22 10:59:32 by mfavoree         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+
+// Question: should I handle a case where s1 or s2 is NULL?
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
