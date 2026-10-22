@@ -2,11 +2,13 @@
 
 int	main(int argc, char *argv[])
 {
-	char	*p;
+	char		*p;
+	char const	*s;
 
-	if (argc != 2)
+	if (argc != 4)
 		return (0);
-	p = ft_calloc(1, ft_atoi(argv[1]));
+	s = argv[1];
+	p = ft_substr(s, ft_atoi(argv[2]), ft_atoi(argv[3]));
 	if (p == NULL)
 	{
 		perror("Something happened");
