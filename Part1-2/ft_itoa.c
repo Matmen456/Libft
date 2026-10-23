@@ -6,17 +6,18 @@
 /*   By: mfavoree <mfavoree@student.42belgium.be>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 14:06:33 by mfavoree          #+#    #+#             */
-/*   Updated: 2026/10/23 10:57:15 by mfavoree         ###   ########.fr       */
+/*   Updated: 2026/10/23 14:03:31 by mfavoree         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Why does negative numbers produce nothing just a /0?
-// Why can't I transform the INT_MIN?
+/*
+It works, but I only have one question. How does a unsigned int = -int becomes that -int positive unsigned int value?
+*/
 size_t	ft_count_memory(int n)
 {
-	size_t	count;
-	size_t	ntem;
+	size_t			count;
+	unsigned int	ntem;
 
 	count = 0;
 	ntem = n;
@@ -36,9 +37,9 @@ size_t	ft_count_memory(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*num;
-	size_t	i;
-	size_t	ntem;
+	char			*num;
+	size_t			i;
+	unsigned int	ntem;
 
 	i = ft_count_memory(n);
 	num = malloc(i + 1);
@@ -48,7 +49,7 @@ char	*ft_itoa(int n)
 	i--;
 	ntem = n;
 	if (n < 0)
-		ntem = -n;
+		ntem = 0 - ntem;
 	while (ntem >= 10)
 	{
 		num[i] = ntem % 10 + '0';
@@ -56,6 +57,7 @@ char	*ft_itoa(int n)
 		i--;
 	}
 	num[i] = ntem % 10 + '0';
+	i--;
 	if (n < 0)
 		num[i] = '-';
 	return (num);
