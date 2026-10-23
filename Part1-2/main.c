@@ -2,22 +2,8 @@
 
 int	main(int argc, char *argv[])
 {
-	const char	*p1;
-	const char	*p2;
-	size_t		n;
-	char		*ptr;
-
-	if (argc != 4)
+	if (argc != 2)
 		return (0);
-	p1 = argv[1];
-	p2 = argv[2];
-	n = atoi(argv[3]);
-	ptr = ft_strnstr(p1, p2, n);
-	if (ptr == NULL)
-	{
-		printf("We return a NULL here");
-		return (0);
-	}
-	printf("%s\n", ptr);
+	printf("%s\n", ft_itoa(ft_atoi(argv[1])));
 	return (0);
 }
