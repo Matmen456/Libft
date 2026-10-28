@@ -6,43 +6,36 @@
 /*   By: mfavoree <mfavoree@student.42belgium.be>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 12:56:37 by mfavoree          #+#    #+#             */
-/*   Updated: 2026/10/21 14:55:12 by mfavoree         ###   ########.fr       */
+/*   Updated: 2026/10/28 13:38:57 by mfavoree         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-Don't forget the error handling!
-NOrmally you can compare d and s. Search what happens when it cannot work
-*/
+// In general every machine will allow dest > src, if it would be larger while
+// not overlap, it doesn't matter as copying backwards is harmless.
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*s;
+	size_t	i;
 
-	i = 0;
-	d = dest;
-	s = src;
-	while (i < n)
+	if (dest == NULL || src == NULL)
+		return (NULL);
+	if (dest > src)
 	{
-		// Overlap dedection is not correct, you are just comparing the same.
-		if ((s + i) == (d + i))
+		i = n;
+		while (i > 0)
 		{
-			// We read out of range here.
-			i = n;
-			while (i > 0)
-			{
-				d[i] = s[i];
-				i--;
-				if (i == 0)
-					break ;
-			}
-			return (dest);
+			i--;
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		}
-		i++;
-		// You are forgetting the reading in the different direction.
 	}
-	ft_memcpy(dest, src, n);
+	else
+	{
+		i = 0;
+		while (i < n)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
+	}
 	return (dest);
 }
