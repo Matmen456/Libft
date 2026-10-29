@@ -2,22 +2,25 @@
 
 int	main(int argc, char *argv[])
 {
-	char		*p;
-	char const	*s1;
-	char const	*set;
+	char	**ptr;
+	int		i;
 
-	if (argc != 3)
-		return (0);
-	s1 = argv[1];
-	set = argv[2];
-	p = ft_strtrim(s1, set);
-	if (p == NULL)
+	ptr = NULL;
+	if (argc == 3)
 	{
-		perror("Something happened");
-		free(p);
-		return (0);
+		ptr = ft_split(argv[1], argv[2][0]);
+		if (ptr)
+		{
+			i = 0;
+			while (ptr[i])
+			{
+				printf("%s\n", ptr[i]);
+				free(ptr[i]);
+				printf("\n");
+				i++;
+			}
+			free(ptr);
+		}
 	}
-	printf("%s\n", p);
-	free(p);
 	return (0);
-}	
+}
