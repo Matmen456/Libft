@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-// Finds the first occurance of a byte c inside a string.
+
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
