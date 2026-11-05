@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_count_memory(int n)
+static size_t	ft_count_memory(int n)
 {
 	size_t			count;
 	unsigned int	ntem;
