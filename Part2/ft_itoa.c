@@ -21,7 +21,7 @@ static size_t	ft_count_memory(int n)
 	ntem = n;
 	if (n < 0)
 	{
-		ntem = -n;
+		ntem = -ntem;
 		count++;
 	}
 	while (ntem >= 10)
