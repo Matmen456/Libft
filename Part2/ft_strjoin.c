@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-// Question: should I handle a case where s1 or s2 is NULL?
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*p;
