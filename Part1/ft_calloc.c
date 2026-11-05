@@ -32,6 +32,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		errno = ENOMEM;
 		return (NULL);
 	}
-	ft_memset(p, '0', tsize);
+	ft_memset(p, 0, tsize);
 	return (p);
 }
