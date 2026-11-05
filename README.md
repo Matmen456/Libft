@@ -19,8 +19,8 @@ The project teaches:
 The library is split into three parts:
 
 1. **Libc functions**: reimplementations prefixed with `ft_`.
-2. **Additional functions**: string, number and file-descriptor utilities that are not in the libc.
-3. **Linked list functions**: a small API to manipulate singly linked lists.
+2. **Additional functions**: helpers to create and transform strings and to write characters, strings and numbers to a file descriptor.
+3. **Linked list functions**: a set of functions to create and manipulate singly linked lists.
 
 ### Library overview
 
