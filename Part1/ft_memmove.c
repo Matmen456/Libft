@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-// In general every machine will allow dest > src, if it would be larger while
-// not overlap, it doesn't matter as copying backwards is harmless.
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
