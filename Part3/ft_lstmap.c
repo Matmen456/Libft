@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-// We have a problem if f(void) would use malloc and wouldn't free its memory
-// If it uses malloc if allocation fails, as we don't know if it uses malloc
-// we should assume it should be responsible for this itself.
 
 // Use ft_lstnew, ft_lstclear and ft_lstadd_back.
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
