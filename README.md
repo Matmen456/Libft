@@ -133,10 +133,6 @@ This produces `libft.a` at the root of the repository. All source files are comp
 | `make fclean` | Removes the object files and `libft.a` |
 | `make re` | Rebuilds everything from scratch |
 
-### Testing against the system functions
-
-Some functions (`strlcpy`, `strlcat`, `bzero`) are not in the GNU C Library by default. To compare your versions with the system ones in your own tests, include `<bsd/string.h>` and compile with `-lbsd`. When comparing functions like `memcmp` or `strncmp`, compare only the sign of the result, since the exact magnitude is not specified.
-
 ## Resources
 
 ### Classic references
