@@ -50,7 +50,6 @@ static void	ft_delete(char **p, size_t i)
 	while (i > 0)
 		free(p[--i]);
 	free(p);
-	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -72,7 +71,7 @@ char	**ft_split(char const *s, char c)
 			len = ft_count_letters(s, c);
 			p[i] = ft_substr(s, 0, len);
 			if (!p[i])
-				return (ft_delete(p, i));
+				return (ft_delete(p, i), NULL);
 			s += len;
 			i++;
 		}
