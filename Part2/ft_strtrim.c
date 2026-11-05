@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_pstart(char const *s1, char const *set)
+static size_t	ft_pstart(char const *s1, char const *set)
 {
 	size_t	i;
 
@@ -22,7 +22,7 @@ size_t	ft_pstart(char const *s1, char const *set)
 	return (i);
 }
 
-size_t	ft_pend(char const *s1, char const *set)
+static size_t	ft_pend(char const *s1, char const *set)
 {
 	size_t	i;
 
