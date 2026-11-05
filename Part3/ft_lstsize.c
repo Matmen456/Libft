@@ -20,7 +20,7 @@ unsigned int	ft_lstsize(t_list *lst)
 	while (lst != NULL)
 	{
 		i++;
-		lst = list->next;
+		lst = lst->next;
 	}
 	return (i);
 }
