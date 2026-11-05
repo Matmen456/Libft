@@ -133,33 +133,6 @@ This produces `libft.a` at the root of the repository. All source files are comp
 | `make fclean` | Removes the object files and `libft.a` |
 | `make re` | Rebuilds everything from scratch |
 
-### Usage
-
-Include the header in your source files and link against the library:
-
-```c
-#include "libft.h"
-
-int	main(void)
-{
-	char	*str;
-
-	str = ft_strjoin("Hello, ", "42!");
-	if (str == NULL)
-		return (1);
-	ft_putendl_fd(str, 1);
-	free(str);
-	return (0);
-}
-```
-
-```bash
-cc -Wall -Wextra -Werror main.c -L. -lft -o demo
-./demo
-```
-
-If you place `libft.a` and `libft.h` elsewhere, adjust the `-L` and `-I` flags accordingly.
-
 ### Testing against the system functions
 
 Some functions (`strlcpy`, `strlcat`, `bzero`) are not in the GNU C Library by default. To compare your versions with the system ones in your own tests, include `<bsd/string.h>` and compile with `-lbsd`. When comparing functions like `memcmp` or `strncmp`, compare only the sign of the result, since the exact magnitude is not specified.
