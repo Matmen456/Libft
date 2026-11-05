@@ -12,31 +12,25 @@
 
 #include "libft.h"
 
-// Use ft_lstnew, ft_lstclear and ft_lstadd_back.
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
-	t_list	*start;
+	t_list	*node;
+	void	*content;
 
-	if (lst == NULL)
-		return (NULL);
-	new_list = malloc(sizeof(t_list));
-	if (new_list == NULL)
-		return (NULL);
-	start = new_list;
-	while (start != NULL && lst != NULL)
+	new_list = NULL;
+	while (lst != NULL)
 	{
-		new_list->content = f(lst->content);
-		lst = lst->next;
-		if (lst != NULL)
+		content = f(lst->content);
+		node = ft_lstnew(content);
+		if (node == NULL)
 		{
-			new_list->next = malloc(sizeof(t_list));
-			new_list = new_list->next;
-			if (new_list == NULL)
-				ft_lstclear(&start, del);
+			del(content);
+			ft_lstclear(&new_list, del);
+			return (NULL);
 		}
-		else
-			new_list->next = NULL;
+		ft_lstadd_back(&new_list, node);
+		lst = lst->next;
 	}
-	return (start);
+	return (new_list);
 }
