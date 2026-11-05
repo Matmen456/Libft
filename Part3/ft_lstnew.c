@@ -12,7 +12,6 @@
 
 #include "libft.h"
 
-// Do we have to return a NULL error if the malloc memory demand is not met?
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*lst;
