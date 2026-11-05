@@ -6,14 +6,12 @@
 /*   By: mfavoree <mfavoree@student.42belgium.be>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 14:06:33 by mfavoree          #+#    #+#             */
-/*   Updated: 2026/10/23 14:03:31 by mfavoree         ###   ########.fr       */
+/*   Updated: 2026/11/05 10:52:16 by mfavoree         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-It works, but I only have one question. How does a unsigned int = -int becomes that -int positive unsigned int value?
-*/
+
 size_t	ft_count_memory(int n)
 {
 	size_t			count;

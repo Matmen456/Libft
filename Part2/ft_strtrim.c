@@ -6,18 +6,11 @@
 /*   By: mfavoree <mfavoree@student.42belgium.be>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 11:05:34 by mfavoree          #+#    #+#             */
-/*   Updated: 2026/10/22 13:56:20 by mfavoree         ###   ########.fr       */
+/*   Updated: 2026/11/05 10:52:01 by mfavoree         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* 
-You have to trim all characters from set from the start and the end.
-I do this by finding the start position from the moment no set character is
-there anymore, and return that index. The same logic applies for the last
-position.
-*/
-// Again here, should I return null if s1 or set is NULL?
 
 size_t	ft_pstart(char const *s1, char const *set)
 {
@@ -47,10 +40,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len;
 	char	*p;
 
-	/*
-	if (!s1 || !set)
-		return (NULL);
-	*/
 	pstart = ft_pstart(s1, set);
 	pend = ft_pend(s1, set);
 	if (pstart > pend)

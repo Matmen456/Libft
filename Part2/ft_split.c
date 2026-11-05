@@ -6,22 +6,12 @@
 /*   By: mfavoree <mfavoree@student.42belgium.be>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 14:40:57 by mfavoree          #+#    #+#             */
-/*   Updated: 2026/10/29 10:28:57 by mfavoree         ###   ########.fr       */
+/*   Updated: 2026/11/05 10:49:20 by mfavoree         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-Check? Make enough space to enlist all pointer values + NULL value. If fails
-make sure to return a NULL. If we need to assign 0 values because our s is
-empty, then we return an array only containing a NULL.
 
-Check? Make sure that our space for our words is allocated properly. If
-allocation fails, free evertyhing and return a NULL, NOT NULL ARRAY!
-
-Check? Make sure our copying works from the exact location, and adds a \0 at the
-end.
-*/
 static size_t	ft_count_words(char const *s, char c)
 {
 	size_t	i;
@@ -35,7 +25,7 @@ static size_t	ft_count_words(char const *s, char c)
 	{
 		if (isword == 0 && s[i] != c)
 		{
-			count+= 1;
+			count += 1;
 			isword = 1;
 		}
 		else if (isword == 1 && s[i] == c)
@@ -45,61 +35,47 @@ static size_t	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static size_t	ft_count_letters(char const **j, char c)
+static size_t	ft_count_letters(char const *s, char c)
 {
 	size_t	i;
 
 	i = 0;
-	while (**j == c)
-		(*j)++;
-	while (**j != c && **j == '\0')
-	{
+	while (s[i] && s[i] != c)
 		i++;
-		(*j)++;
-	}
 	return (i);
 }
 
-static void	ft_delete(char **p)
+static void	ft_delete(char **p, size_t i)
 {
-	size_t	i;
-
-	i = 0;
-	while (p[i])
-	{
-		free(p[i]);
-		i++;
-	}
+	while (i > 0)
+		free(p[--i]);
 	free(p);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char		**p;
-	size_t		total_words;
-	size_t		total_letters;
-	size_t		i;
-	char const	*j;
+	char	**p;
+	size_t	i;
+	size_t	len;
 
-	total_words = ft_count_words(s, c);
-	p = malloc((total_words * sizeof(char *)) + sizeof(char *));
+	p = malloc((ft_count_words(s, c) + 1) * sizeof(char *));
 	if (p == NULL)
 		return (NULL);
 	i = 0;
-	j = s;
-	while (i < total_words)
+	while (*s)
 	{
-		total_letters = ft_count_letters(&j, c);
-		p[i] = malloc(total_letters + 1);
-		if (p[i] == NULL)
+		while (*s == c)
+			s++;
+		if (*s)
 		{
-			ft_delete(p);
-			return (NULL);
+			len = ft_count_letters(s, c);
+			p[i] = ft_substr(s, 0, len);
+			if (!p[i])
+				return (ft_delete(p, i), NULL);
+			s += len;
+			i++;
 		}
-		ft_memmove(p[i], j, total_letters);
-		p[total_letters] = '\0';
-		i++;
 	}
 	p[i] = NULL;
 	return (p);
-}	
+}
