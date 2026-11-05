@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-// size_t makes use of the stddef library defined in the libft.h header.
 
 void	*ft_memset(void *s, int c, size_t n)
 {
